@@ -26,29 +26,19 @@ public class SmsReportDemo {
 		//状态报告拉取条数
 		String count = "1";
 		
-		SmsReportRequest smsReportRequest = new SmsReportRequest(account, 
-
-pswd, count);
+		SmsReportRequest smsReportRequest = new SmsReportRequest(account, pswd, count);
 
 		String requestJson = JSON.toJSONString(smsReportRequest);
 
 		System.out.println("before request string is: " + requestJson);
 
-		String response = ChuangLanSmsUtil.sendSmsByPost
+		String response = ChuangLanSmsUtil.sendSmsByPost(smsReportRequestUrl, requestJson);
 
-(smsReportRequestUrl, requestJson);
+		System.out.println("response after request result is : " + response);
 
-		System.out.println("response after request result is : " + 
+		SmsReportResponse smsReportRespnse = JSON.parseObject(response, SmsReportResponse.class);
 
-response);
-
-		SmsReportResponse smsReportRespnse = JSON.parseObject(response, 
-
-SmsReportResponse.class);
-
-		System.out.println("response  toString is : " + 
-
-smsReportRespnse.getResult());
+		System.out.println("response  toString is : " + smsReportRespnse.getResult());
 
 	}
 
