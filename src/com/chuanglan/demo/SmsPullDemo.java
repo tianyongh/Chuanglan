@@ -25,25 +25,17 @@ public class SmsPullDemo {
 		//上行拉取条数
 		String count = "1";
 		
-		SmsPullRequest smsPullRequest = new SmsPullRequest(account, pswd, 
-
-count);
+		SmsPullRequest smsPullRequest = new SmsPullRequest(account, pswd,count);
 
 		String requestJson = JSON.toJSONString(smsPullRequest);
 
 		System.out.println("before request string is: " + requestJson);
 
-		String response = ChuangLanSmsUtil.sendSmsByPost(smsPullRequestUrl, 
+		String response = ChuangLanSmsUtil.sendSmsByPost(smsPullRequestUrl, requestJson);
 
-requestJson);
+		System.out.println("response after request result is : " + response);
 
-		System.out.println("response after request result is : " + 
-
-response);
-
-		SmsPullResponse smsPullResponse = JSON.parseObject(response, 
-
-SmsPullResponse.class);
+		SmsPullResponse smsPullResponse = JSON.parseObject(response, SmsPullResponse.class);
 		
 		System.out.println("response  toString is : " + smsPullResponse);
 	}
