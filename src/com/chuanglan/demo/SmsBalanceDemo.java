@@ -21,12 +21,12 @@ public class SmsBalanceDemo {
 	
 	public static void main(String[] args) throws UnsupportedEncodingException {
 	
-		//查询余额地址(实际应用地址以253自助通平台提供地址为准)
-       String smsBalanceRequestUrl = "http://vsms.253.com/msg/balance/json";
-	
+		//请求地址请登录253云通讯自助通平台查看或者询问您的商务负责人获取
+		String smsBalanceRequestUrl = "http://xxx/msg/balance/json";
+       
 		SmsBalanceRequest smsBalanceRequest=new SmsBalanceRequest(account, pswd);
 		
-        String requestJson = JSON.toJSONString(smsBalanceRequest);
+        	String requestJson = JSON.toJSONString(smsBalanceRequest);
 		
 		System.out.println("before request string is: " + requestJson);
 		
