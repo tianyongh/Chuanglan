@@ -23,7 +23,7 @@ public class SmsSendDemo {
 		//请求地址请登录253云通讯自助通平台查看或者询问您的商务负责人获取
 		String smsSingleRequestServerUrl = "http://xxx/msg/send/json";
 		// 短信内容
-	    String msg = "【253云通讯】你好,你的验证码是123456";
+	    	String msg = "【253云通讯】你好,你的验证码是123456";
 		//手机号码
 		String phone = "18721605772";
 		//状态报告
